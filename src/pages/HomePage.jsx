@@ -27,8 +27,8 @@ function HomePage() {
             <div className="md:w-1/2">
               <div className="bg-white p-2 rounded-lg shadow-2xl">
                 <img 
-                  src="https://placehold.co/600x400/e2e8f0/475569?text=Dashboard+Preview" 
-                  alt="App Dashboard" 
+                  src="/comsats.jpg" 
+                  alt="COMSATS University" 
                   className="w-full h-auto rounded-md"
                 />
               </div>
