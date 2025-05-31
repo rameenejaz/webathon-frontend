@@ -7,7 +7,11 @@ import Features from './pages/Features'
 import Pricing from './pages/Pricing'
 import About from './pages/About'
 import Contact from './pages/Contact'
-
+import Departments from './pages/Departments'
+import ReportIssue from './pages/ReportIssue'
+import InteractiveMap from './pages/InteractiveMap'
+import ProposalsAndVote from './pages/ProposalsAndVote'
+import Communication from './pages/Communication'
 // Import your pages here
 import HomePage from './pages/HomePage'
 // import AboutPage from './pages/AboutPage'
@@ -27,11 +31,15 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/departments" element={<Departments />} />
+            <Route path="/issues/report" element={<ReportIssue />} />
+            <Route path="/map" element={<InteractiveMap />} />
+            <Route path="/proposals/view" element={<ProposalsAndVote />} />
+            <Route path="/communication/chat" element={<Communication />} />
           </Routes>
         </main>
       </div>
     </Router>
   )
 }
-
 export default App
