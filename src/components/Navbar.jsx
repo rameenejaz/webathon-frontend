@@ -107,13 +107,7 @@ const Navbar = () => {
               </button>
               {activeDropdown === 'departments' && (
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                  <Link to="/departments/transport" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Transport</Link>
-                  <Link to="/departments/sanitation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sanitation</Link>
-                  <Link to="/departments/health" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Health</Link>
-                  {userRole === 'admin' && (
-                    <Link to="/departments/add" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Add Department</Link>
-                  )}
-                  <Link to="/departments/kpis" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Department KPIs</Link>
+                  <Link to="/departments" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All Departments</Link>
                 </div>
               )}
             </div>
@@ -322,13 +316,7 @@ const Navbar = () => {
           </MobileAccordion>
           
           <MobileAccordion title="Departments" toggleMenu={toggleMenu}>
-            <Link to="/departments/transport" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Transport</Link>
-            <Link to="/departments/sanitation" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Sanitation</Link>
-            <Link to="/departments/health" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Health</Link>
-            {userRole === 'admin' && (
-              <Link to="/departments/add" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Add Department</Link>
-            )}
-            <Link to="/departments/kpis" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Department KPIs</Link>
+            <Link to="/departments" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">All Departments</Link>
           </MobileAccordion>
           
           <MobileAccordion title="Dashboard" toggleMenu={toggleMenu}>
