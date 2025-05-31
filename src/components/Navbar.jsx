@@ -53,26 +53,6 @@ const Navbar = () => {
               Home
             </Link>
             
-            {/* Interactive Map Dropdown */}
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
-              <button 
-                onClick={() => toggleDropdown('map')} 
-                className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center"
-              >
-                Interactive Map
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {activeDropdown === 'map' && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 transform transition-all duration-300">
-                  <Link to="/map" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">View Map</Link>
-                  <Link to="/map/filter" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Filter Issues</Link>
-                  <Link to="/map/ar" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">AR View</Link>
-                </div>
-              )}
-            </div>
-
             {/* My Reported Issues Dropdown */}
             <div className="relative" onClick={(e) => e.stopPropagation()}>
               <button 
@@ -88,7 +68,6 @@ const Navbar = () => {
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
                   <Link to="/issues/reported" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Reported Issues</Link>
                   <Link to="/issues/report" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Form-Based Report</Link>
-                  <Link to="/issues/ar-report" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">AR-Based Report</Link>
                   <Link to="/issues/submissions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Submissions</Link>
                 </div>
               )}
@@ -108,44 +87,6 @@ const Navbar = () => {
               {activeDropdown === 'departments' && (
                 <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
                   <Link to="/departments" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">All Departments</Link>
-                </div>
-              )}
-            </div>
-
-            {/* Dashboard - Conditionally Rendered Based on Role */}
-            <div className="relative" onClick={(e) => e.stopPropagation()}>
-              <button 
-                onClick={() => toggleDropdown('dashboard')} 
-                className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center"
-              >
-                Dashboard
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {activeDropdown === 'dashboard' && (
-                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
-                  {userRole === 'admin' && (
-                    <>
-                      <Link to="/dashboard/users" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">User Management</Link>
-                      <Link to="/dashboard/analytics" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Analytics</Link>
-                      <Link to="/dashboard/automation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Automation</Link>
-                    </>
-                  )}
-                  {userRole === 'official' && (
-                    <>
-                      <Link to="/dashboard/assigned" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Assigned Issues</Link>
-                      <Link to="/dashboard/chat" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Chat</Link>
-                      <Link to="/dashboard/tasks" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Task Rules</Link>
-                    </>
-                  )}
-                  {userRole === 'citizen' && (
-                    <>
-                      <Link to="/dashboard/issues" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Issues</Link>
-                      <Link to="/dashboard/notifications" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Notifications</Link>
-                      <Link to="/dashboard/voting" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Voting</Link>
-                    </>
-                  )}
                 </div>
               )}
             </div>
@@ -301,46 +242,14 @@ const Navbar = () => {
             Home
           </Link>
           
-          {/* Mobile Accordion Menus */}
-          <MobileAccordion title="Interactive Map" toggleMenu={toggleMenu}>
-            <Link to="/map" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">View Map</Link>
-            <Link to="/map/filter" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Filter Issues</Link>
-            <Link to="/map/ar" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">AR View</Link>
-          </MobileAccordion>
-          
           <MobileAccordion title="My Issues" toggleMenu={toggleMenu}>
             <Link to="/issues/reported" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">My Reported Issues</Link>
             <Link to="/issues/report" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Form-Based Report</Link>
-            <Link to="/issues/ar-report" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">AR-Based Report</Link>
             <Link to="/issues/submissions" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">My Submissions</Link>
           </MobileAccordion>
           
           <MobileAccordion title="Departments" toggleMenu={toggleMenu}>
             <Link to="/departments" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">All Departments</Link>
-          </MobileAccordion>
-          
-          <MobileAccordion title="Dashboard" toggleMenu={toggleMenu}>
-            {userRole === 'admin' && (
-              <>
-                <Link to="/dashboard/users" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">User Management</Link>
-                <Link to="/dashboard/analytics" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Analytics</Link>
-                <Link to="/dashboard/automation" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Automation</Link>
-              </>
-            )}
-            {userRole === 'official' && (
-              <>
-                <Link to="/dashboard/assigned" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Assigned Issues</Link>
-                <Link to="/dashboard/chat" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Chat</Link>
-                <Link to="/dashboard/tasks" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Task Rules</Link>
-              </>
-            )}
-            {userRole === 'citizen' && (
-              <>
-                <Link to="/dashboard/issues" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">My Issues</Link>
-                <Link to="/dashboard/notifications" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Notifications</Link>
-                <Link to="/dashboard/voting" className="block pl-8 py-2 text-sm text-gray-700 hover:text-teal-600">Voting</Link>
-              </>
-            )}
           </MobileAccordion>
           
           <MobileAccordion title="Proposals" toggleMenu={toggleMenu}>

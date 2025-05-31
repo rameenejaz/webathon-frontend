@@ -12,7 +12,6 @@ import Departments from './pages/Departments'
 import ReportIssue from './pages/ReportIssue'
 import Communication from './pages/Communication'
 import MyIssues from './pages/MyIssues'
-import Dashboard from './pages/Dashboard'
 import Auth from './pages/Auth'
 import HomePage from './pages/HomePage'
 import MySubmissions from './pages/MySubmissions'
@@ -22,6 +21,8 @@ import SharedFiles from './pages/SharedFiles'
 import AboutOverview from './pages/AboutOverview'
 import ARFeatureGuide from './pages/ARFeatureGuide'
 import ProposalVote from './pages/ProposalVote'
+import ViewProposals from './pages/ViewProposals'
+import Documentation from './pages/Documentation'
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/about/overview" element={<AboutOverview />} />
             <Route path="/about/ar-guide" element={<ARFeatureGuide />} />
+            <Route path="/about/docs" element={<Documentation />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
@@ -44,13 +46,13 @@ function App() {
             <Route path="/issues/report" element={<ReportIssue />} />
             <Route path="/issues/reported" element={<MyIssues />} />
             <Route path="/issues/submissions" element={<MySubmissions />} />
+            <Route path="/proposals/view" element={<ViewProposals />} />
             <Route path="/proposals/vote" element={<ProposalVote />} />
             <Route path="/proposals/results" element={<VotingResults />} />
             <Route path="/communication/chat" element={<Communication />} />
             <Route path="/communication/notifications" element={<NotificationsCenter />} />
             <Route path="/communication/files" element={<SharedFiles />} />
             <Route path="/auth" element={<Auth />} />
-            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </main>
       </div>
