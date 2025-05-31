@@ -196,7 +196,10 @@ function HomePage() {
               <Link to="/issues/report" className="px-8 py-3 bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white rounded-lg font-medium text-center transition-all duration-300 shadow-lg hover:shadow-xl">
                 Report an Issue
                 </Link>
-              <Link to="/dashboard" className="px-8 py-3 bg-white bg-opacity-10 hover:bg-opacity-20 text-white border border-white border-opacity-30 rounded-lg font-medium text-center backdrop-blur-sm transition-all duration-300">
+                <Link
+                to="/dashboard"
+                className="px-8 py-3 bg-black text-white hover:bg-gray-900 border border-gray-200 rounded-lg font-medium text-center backdrop-blur-sm transition-all duration-300"
+                >
                 Explore Dashboard
                 </Link>
               </div>
