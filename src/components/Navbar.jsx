@@ -40,10 +40,11 @@ const Navbar = () => {
     <nav className="bg-white backdrop-blur-md bg-opacity-90 shadow-md sticky top-0 z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo */}
+          {/* Logo - Updated with CoreCity name and logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="flex items-center">
-              <span className="text-xl font-bold bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent">SCCD</span>
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="/logo.avif" alt="CoreCity Logo" className="h-8 w-8 object-contain" />
+              <span className="text-xl font-bold bg-gradient-to-r from-teal-500 to-blue-600 bg-clip-text text-transparent">CoreCity</span>
             </Link>
           </div>
 
